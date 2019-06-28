@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="/scripts/angular.min.js"></script>
+    <script src="/scripts/filter.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filter</title>
+</head>
+<body ng-app ="app">
+    <table class ="table", ng-controller = "filterCtrl">
+        Show: <select ng-model="sortColumn">
+                <option value="name">Name ^</option>
+                <option value="birthDate">DoB ^</option>
+                <option value="salary">Salary ^</option>
+                <option value="-name">Name v</option>
+                <option value="-birthDate">DoB v</option>
+                <option value="-salary">Salary v</option>
+                
+        </select>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Date of Birth</td>
+                <td>Salary</td>
+                <td>Gender</td>
+                <td>Status</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat = "employee in employees | orderBy: sortColumn">
+                <td>{{employee.name|uppercase}}</td>
+                <td>{{employee.dob|date:'MM/dd/yyyy'}}</td>
+                <td>{{employee.salary|currency}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.status|status}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>

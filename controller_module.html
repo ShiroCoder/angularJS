@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="myModule"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-init="a=1; b=2;"> 
+        Sum of a+b = {{a+b}}
+    </div>
+    <div ng-init="arr=[1,2,3,4];">
+        <li ng-repeat="a in arr">
+            {{a}}
+        </li>
+    </div>
+
+    <div ng-init="users=[{name: 'tan', age:21},
+    {name: 'tuan', age:21},
+    {name: 'tu', age:21}];">
+        <li ng-repeat="user in users">
+            {{user.name}} {{user.age}}
+        </li>
+    </div>
+    <div ng-controller="myController">
+        {{message}} 
+    </div>
+
+    <div ng-controller="anotherController", ng-init="message='welcome'">
+        <div login-form>
+            {{message}}
+        </div>
+    </div>
+    
+    <!-- <div ng-controller="sumCalculator">
+        <div>
+            <table>
+                 <tr>
+                     <td>Operator 1</td>
+                     <td><input type="text" , id='a'></td>
+                 </tr>
+                 <tr>
+                     <td>Operator 2</td>
+                     <td><input type="text" ,id='b'"></td>
+                 </tr>
+            </table>
+            <button ng-click="cal()">Click</button>
+            <div>{{sum}}</div>
+        </div>
+    </div> -->
+
+
+     <!-- <div ng-controller="inputTextBox">
+         <p>First Name <input type="text" , ng-model="emp.firstName"></p>
+         <br>
+         <p>First Name <input type="text" , ng-model="emp.lastName"></p>
+         <br>
+         <p>Age <input type="text" , ng-model="emp.age"></p>
+         <br>
+         <p>{{emp.firstName}}</p>
+         <br>
+         <p>{{emp.lastName}}</p>
+         <br>
+         <p>{{emp.age}}</p>
+     </div> -->
+
+    
+</body>
+</html>

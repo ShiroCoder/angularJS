@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+<head>
+    <script src="/scripts/angular.min.js"></script>
+    <script src="/scripts/event.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller = "eventController">
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Like</td>
+                    <td>Dislike</td>
+                    <td>Offsets</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tech in technologies">
+                    <td>{{tech.name}}</td>
+                    <td>{{tech.like}}</td>
+                    <td>{{tech.dislike}}</td>
+                    <td>{{tech.offsets}}</td>
+                    <td>
+                        <button ng-click="increaseLike(tech)">Like</button>
+                        <button ng-click="increaseDislike(tech )">Dislike</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    
+</body>
+</html>
